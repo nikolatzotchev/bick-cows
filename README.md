@@ -1,0 +1,2 @@
+# bick-cows
+game(homework)
