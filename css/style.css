@@ -53,6 +53,15 @@ p {
 	color: white;
 }
 
+.lko {
+	font-size: 20px;
+	background: #E5D352 ;
+	border: 2px solid #482C3D;
+	color: black;
+	width: 30px;
+	text-align: center;
+}
+
 #status {
 	background: #D9E76C;
 	padding: 10px;

@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="lib/hashids.min.js"></script>
-	<script src="main.js"></script>
+	<script src="js/main.js"></script>
 </head>
 
 
@@ -17,13 +17,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<h1>Guess my number!</h1>
+				<h1>Cows & Bulls</h1>
 				<p>
-					My number is a <b>random</b> one. It has <b>4 DISTINCT digits</b>.
+					My number is a <b>random</b> one. It has <b>4 to 10 digits</b>.
 					You must <b>guess</b> it.
-					When you try a number I will tell you <b>how many digits are ok</b> and how many of them
+					When you try a number I will tell you the number of the cows aka <b>how many digits are ok </b> and the number of the bulls aka how many of them
 					are in the <b>right place</b>.
 				</p>
+				 <input type="range" name="points" min="3" max="10" value="3" onchange="updateTextInput(this.value);">
+				 <input type="text" id="textInput" class = "lko" value="">
+				 <input type="submit">
 				<button id="choose_number" class="btn btn-default pull-right">
 					Yes. Choose a number, dear computer!
 				</button>
@@ -40,17 +43,16 @@
 				    	<tr>
 					    	<th>#</th>
 					    	<th>Your number</th>
-					    	<th>Good digits</th>
-					    	<th>Good positions</th>
+					    	<th> &#x1F42E Cows</th>
+					    	<th>Bulls</th>
 				    	</tr>
 				    </thead>
 				    <tbody>
 				    </tbody>
 				  </table>
 				</div>
-
 				    <label for="your_number">Your number</label>
-				    <input type="number" class="form-control" id="your_number" placeholder="Try to guess my number">
+				    <input type="text" class="form-control" id="your_number" placeholder="Try to guess my number">
 				  <button id="try_it" type="" class="btn btn-default">Try it!</button>
 			</div>
 		</div>
