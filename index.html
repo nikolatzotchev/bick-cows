@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	<script type="text/javascript" src="lib/hashids.min.js"></script>
 	<script src="js/main.js"></script>
 </head>
 
@@ -24,11 +23,13 @@
 					When you try a number I will tell you the number of the cows aka <b>how many digits are ok </b> and the number of the bulls aka how many of them
 					are in the <b>right place</b>.
 				</p>
-				 <input type="range" name="points" min="3" max="10" value="3" onchange="updateTextInput(this.value);">
-				 <input type="text" id="textInput" class = "lko" value="">
-				 <input type="submit">
-				<button id="choose_number" class="btn btn-default pull-right">
-					Yes. Choose a number, dear computer!
+				<p>
+					Choose NUMBER lenght
+				</p>
+				 <input type="range" class="range_line" name="points" min="3" max="10" value="3" onchange="updateTextInput(this.value);">
+				 <input type="text" id="textInput" class = "lko" value="3" disabled>
+				<button id="choose_number" class="btn btn-default pull-right" onclick="random_number()">
+					Choose! 
 				</button>
 			</div>		
 		</div>
@@ -48,6 +49,7 @@
 				    	</tr>
 				    </thead>
 				    <tbody>
+					
 				    </tbody>
 				  </table>
 				</div>
