@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>132131</title>
+	<title>Nikolas Bulls & Cows</title>
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -26,7 +26,7 @@
 				<p>
 					Choose NUMBER lenght
 				</p>
-				 <input type="range" class="range_line" name="points" min="3" max="10" value="3" oninput="updateTextInput(this.value);">
+				 <input type="range" class="range_line" name="points" min="3" max="10" oninput="updateTextInput(this.value);">
 				 <input type="text" id="textInput" class = "lko" value="3" disabled>
 				<button id="choose_number" class="btn btn-default pull-right" onclick="random_number()">
 					Choose!
@@ -58,7 +58,6 @@
 				    <input type="text" class="form-control" id="your_number" placeholder="Try to guess my number" onchange="updateQuessInput();">
 				  <button id="try_it" type="" class="btn btn-default" onclick="check_number()" >Try it!</button>
 			</div>
-		</div>
 		<div class="row">
 			<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<p id="status" class="small"></p>
@@ -68,6 +67,7 @@
 		<button id="restart" class="btn btn-default" onclick="restart()"> Restart game </button>
 		<button id="restart" class="btn btn-default" onclick="showNumber()"> Give up </button>
 		<button id="restart" class="btn btn-default" onclick="hint()"> Show hint </button>
+		</div>
 	</div>
 </body>
 </html>

@@ -17,6 +17,9 @@ body {
 	background: #E5D352;
 	padding: 20px;
 }
+#game_board {
+	display: none;
+}
 
 #your_number {
 	width: 77%;

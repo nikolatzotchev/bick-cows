@@ -1,4 +1,4 @@
-var number_size = 3;
+var number_size = 1;
 var number_toquess = [];
 var user_number = 1;
 var number_of_guesses = 0;
@@ -24,12 +24,11 @@ function random_number() {
   $("#hinter").html();
   populate_hint();
   $("#your_number").prop("disabled", false);
-
-	$("#status").html("<b>Game has started!</b> You have to guess a <b>" + number_size + "</b> digits long number!");
 	for (var i = 0 ; i < number_size ; i++) {
 		var digit = random_digit(10);
     if (i == 0 && digit == 0) {
       i--;
+	  continue;
     }
     while (number_toquess.includes(digit)) {
         digit = random_digit(10);
@@ -37,6 +36,8 @@ function random_number() {
       number_toquess.push(digit);
   }
   $("#choose").hide();
+  $("#game_board").show();
+  $("#status").html("<b>Game has started!</b> You have to guess a <b>" + number_size + "</b> digits long number!");
   console.log(number_toquess.toString());
 }
 
@@ -63,6 +64,11 @@ function clear_table() {
 
 function check_number() {
   console.log(user_number.length + " and " + number_size);
+  if(user_number == 1) {
+	  $("#status").html("<b>You shoud first pick a number!</b>");
+	  $("#status").css("background", red_color);
+	  return;
+  }
   if (user_number.length != number_size) {
     $("#status").html("<b>" + "Wrong number! </b> Digit size must be <b>" + number_size + "</b> not <b>" + user_number.length + "</b>");
     $("#status").css("background", red_color);
@@ -85,7 +91,7 @@ function check_number() {
 
     $("#your_number").val("");
     if (bulls == number_size) {
-      $("#status").html("<b>You won!</b> You gueesed <b>" + number_toquess + " </b> in <b>" + number_of_guesses + "</b> tries!");
+      $("#status").html("<b>You won!</b> You gueesed <b>" + number_toquess.toString().replace(/,/g,"")+ " </b> in <b>" + number_of_guesses + "</b> tries!");
       $("#status").css("background", green_color);
       alert("You won!");
       $("#choose").show();
@@ -98,23 +104,26 @@ function check_number() {
 
 function restart() {
   $("#choose").show();
-  $("#status").html();
+   $("#game_board").hide();
+  $("#status").html("");
+  $("#status").css("background", green_color);
+  $("#hinter").html("");
+  $("#hinter").css("backgroundColor", green_color);
   clear_table();
 }
 
 function showNumber() {
-  $("#hinter").html("<b>You gave up!</b> The number was <b>" + number_toquess + "</b>!");
+  $("#hinter").html("<b>You gave up!</b> The number was <b>" + number_toquess.toString().replace(/,/g,"") + "</b>!");
   $("#hinter").css("background", red_color);
 }
 
 function hint() {
-  //console.log(not_hinted_positions.toString());
-  if(not_hinted_positions.length   > 0) {
+  if(not_hinted_positions.length > 0) {
     var random_number = random_digit(not_hinted_positions.length);
     var to_hint = not_hinted_positions[random_number];
     not_hinted_positions.splice(random_number, 1);
     hints_shown[to_hint] = number_toquess[to_hint];
-    $("#hinter").html(hints_shown.toString());
+    $("#hinter").html(hints_shown.toString().replace(/,/g,""));
   }
   if(not_hinted_positions.length == 0) {
       $("#your_number").prop("disabled", true);
