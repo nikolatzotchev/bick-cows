@@ -7,7 +7,7 @@
 */
 
 body {
-	background: #537D8D;
+	background: #439643;
 	font-family: 'Arvo', serif;
 }
 
@@ -18,14 +18,25 @@ body {
 	padding: 20px;
 }
 
+#your_number {
+	width: 77%;
+	float: left;
+}
+
+#try_it {
+	width: 20%;
+	float: left;
+	margin-left: 10px;
+}
+
 h1 {
-	text-align: center;	
+	text-align: center;
 	font-weight: 700;
 	color: #AC3931;
 }
 
 h2, h3, h4 {
-	text-align: center;	
+	text-align: center;
 	font-weight: 400;
 	color: #AC3931;
 }
@@ -38,7 +49,7 @@ p {
 }
 
 .btn {
-	font-weight: 700;	
+	font-weight: 700;
 }
 
 .btn-default {
@@ -150,7 +161,11 @@ p {
   background: #205928;
 }
 
-#status {
+#status, #hinter {
 	background: #D9E76C;
 	padding: 10px;
+}
+
+#restart {
+	margin-top: 10px;
 }
